@@ -1,6 +1,6 @@
 # Deribit Market Dashboard
 
-A Python research toolkit which uses Python3.12 (or newer) for **BTC and ETH options, futures, perpetuals and spot**, with a Streamlit dashboard. It collects public Deribit market data, preserves market snapshots, fits volatility surfaces, and evaluates portfolio stresses and option-hedging experiments.
+A Python research toolkit for **BTC and ETH options, futures, perpetuals and spot**, with a Streamlit dashboard. It collects public Deribit market data, preserves market snapshots, fits volatility surfaces, and evaluates portfolio stresses and option-hedging experiments.
 
 The workflow connects three questions: what is the market quoting, what does a model imply, and what happens to a position when prices, volatility or funding change? Analyses can be saved with their original data and settings.
 
