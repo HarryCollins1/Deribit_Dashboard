@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "deribit-dashboard"
+version = "0.6.0"
+description = "Reproducible BTC/ETH derivatives research, walk-forward evaluation and hedge simulations"
+# A README is optional; a code-only checkout must still build and install.
+requires-python = ">=3.12"
+license = "MIT"
+dependencies = [
+  "httpx[socks]>=0.28,<1", "websockets>=14,<17", "pandas>=2.2,<4",
+  "numpy>=2,<3", "scipy>=1.14,<2",
+  "SQLAlchemy>=2.0,<3",
+]
+
+[project.optional-dependencies]
+dashboard = ["streamlit>=1.52,<2", "plotly>=6,<8", "matplotlib>=3.9,<4"]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1", "build>=1.2,<2"]
+
+[project.scripts]
+deribit-dashboard = "deribit_dashboard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+deribit_dashboard = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
